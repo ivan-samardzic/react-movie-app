@@ -63,6 +63,8 @@ const App = () => {
       <div className="header d-flex align-items-center mt-4 mb-4">
         <Header heading='Movie App' color='danger'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <a href="#">Movie Reviews</a>
+        <a href="#">Login</a>
       </div>
       <div className="d-flex align-items-center justify-content-center banner">
         <MainBanner />
@@ -73,7 +75,8 @@ const App = () => {
          favouriteComponent={AddFavourite} 
          movieDetails={MovieDetails}/>
       </div>
-      <div>
+      {favourites.length > 0 &&
+        <div>
         <Header heading='Favourites List' color='light' className="w-100" />
         <div className="row">
           <MovieList movies={favourites}
@@ -83,6 +86,7 @@ const App = () => {
           />
         </div>
       </div>
+      }
     </div>
   );
 }

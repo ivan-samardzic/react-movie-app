@@ -25,5 +25,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
+  margin: auto 20px;
 }
 

@@ -11,7 +11,7 @@ const MovieList = ({movies, favouriteComponent, handleFavouritesClick, movieDeta
             <div className="image-container d-flex justify-content-start m-3">
                 <img className="movie-poster" src={movie.Poster} alt="movie-poster" />
                 <div className="details d-flex align-items-center justify-content-center">
-                    <MovieDetails title='Joker' year='2019' />
+                    <MovieDetails title={movie.Title} year={movie.Year} />
                 </div>
                 <div onClick={() => handleFavouritesClick(movie)} className="overlay d-flex align-items-center justify-content-center">
                     <FavouriteComponent />
