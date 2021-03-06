@@ -7,6 +7,7 @@ import SearchBox from './components/SearchBox/SearchBox'
 import AddFavourite from './components/AddFavourite/AddFavourite'
 import RemoveFavourite from './components/RemoveFavourite/RemoveFavourite'
 import MainBanner from './components/MainBanner/MainBanner'
+import MovieDetails from './components/MovieDetails/MovieDetails'
 
 const App = () => {
   const[movies, setMovies] = useState([])
@@ -62,8 +63,6 @@ const App = () => {
       <div className="header d-flex align-items-center mt-4 mb-4">
         <Header heading='Movie App' color='danger'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-        <a className="m-2 text-light" href="#">Movie Reviews</a>
-        <a className="m-2 text-light" href="#">FAQ</a>
       </div>
       <div className="d-flex align-items-center justify-content-center banner">
         <MainBanner />
@@ -71,7 +70,8 @@ const App = () => {
       <div className="row">
         <MovieList movies={movies}
          handleFavouritesClick={addFavouriteMovie} 
-         favouriteComponent={AddFavourite} />
+         favouriteComponent={AddFavourite} 
+         movieDetails={MovieDetails}/>
       </div>
       <div>
         <Header heading='Favourites List' color='light' className="w-100" />
@@ -79,6 +79,7 @@ const App = () => {
           <MovieList movies={favourites}
             handleFavouritesClick={removeFavouriteMovie} 
             favouriteComponent={RemoveFavourite} 
+            movieDetails={MovieDetails}
           />
         </div>
       </div>
